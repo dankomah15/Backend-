@@ -3,10 +3,11 @@ import path, {dirname} from "path"
 import { fileURLToPath } from "url";
 import authRoutes from './routes/authRoutes.js'
 import todoRoutes from './routes/todoRoutes.js'
+import authMiddleware from "./middleware/authMiddleware.js"
 
 
 const app = express();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5003
 
 //get the file path from the url of the current module
 const __filename = fileURLToPath(import.meta.url)
@@ -30,7 +31,7 @@ app.get(('/'),(req,res)=>{
 
 //routes
 app.use('/auth', authRoutes)
-app.use('/todos', todoRoutes)
+app.use('/todos', authMiddleware, todoRoutes)
 
 
 app.listen(PORT, ()=> {
