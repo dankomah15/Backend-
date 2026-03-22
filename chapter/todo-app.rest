@@ -20,3 +20,32 @@ Content-Type: application/json
     "username": "gilgamesh@gmail.com",
     "password": "123123123"
 }
+
+### featch all todos GET / TODOS (protected)
+GET http://localhost:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc0MTUyNTQzLCJleHAiOjE3NzQyMzg5NDN9.NSadswd_aIia82u6CLh3PlPyU0UOcb7fWctro0_r5G0
+
+### Create a new todo POST /TODOS (protected)
+POST http://localhost:5003/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc0MTUyNTQzLCJleHAiOjE3NzQyMzg5NDN9.NSadswd_aIia82u6CLh3PlPyU0UOcb7fWctro0_r5G0
+Content-Type: application/json
+
+{
+    "task": "Finish coding the projects"
+}
+
+### Update a  todo PUT /TODOS/:ID (protected)
+PUT http://localhost:5003/todos/2?page=4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc0MTUyNTQzLCJleHAiOjE3NzQyMzg5NDN9.NSadswd_aIia82u6CLh3PlPyU0UOcb7fWctro0_r5G0 
+Content-Type: application/json
+
+{
+    "completed": 1
+    
+}
+
+### Delete a  todo DELETE /TODOS/:ID (protected)
+DELETE  http://localhost:5003/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc0MTUyNTQzLCJleHAiOjE3NzQyMzg5NDN9.NSadswd_aIia82u6CLh3PlPyU0UOcb7fWctro0_r5G0 
+
+
